@@ -40,15 +40,12 @@ uses
   {$IFDEF UseSRCResample}
   samplerate,
   {$ENDIF}
-  {$IFDEF UseFFmpegResample}
+  {$IF Defined(UseFFmpegResample) OR Defined (USESWRESAMPLE)}
   avcodec,
   avutil,
   UMediaCore_FFmpeg,
   {$ENDIF}
   {$IFDEF USESWRESAMPLE}
-  avcodec,
-  avutil,
-  UMediaCore_FFmpeg,
   swresample,
   {$ENDIF}
   UMediaCore_SDL,
